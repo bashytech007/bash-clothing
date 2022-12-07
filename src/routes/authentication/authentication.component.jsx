@@ -3,7 +3,7 @@ import {signInWithGooglePopup,
 } from '../../utils/firebase/Firebase.utils'
 import SignUpForm from '../../components/sign-up-form/Sign-up-form.componenets';
 import SignInForm from '../../components/sign-in-form/Sign-in-form.componenets';
-
+import './authentication.styles.scss'
 const Authentication =()=> {
     const logGoogleUser=async()=>{
         const {user}=await signInWithGooglePopup();
@@ -11,11 +11,7 @@ const Authentication =()=> {
     };
    
   return (
-    <div>
-       <h1>Sign in Page  </h1>
-       <button onClick={logGoogleUser}>
-         Sign in with Google Popup
-       </button>
+    <div className='authentication-container'>
        <SignInForm/>
        <SignUpForm/>
         </div>
