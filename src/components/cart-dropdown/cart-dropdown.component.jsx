@@ -4,9 +4,11 @@ import Button from '../button/Button.component'
 import {CartDropDownContainer,EmptyMessage,CartItems} from './cart-dropdown.styles.jsx'
 import Cartitem from '../cart-item/Cartitem.component'
 import {useNavigate} from 'react-router-dom'
+// import { CategoriesContext } from '../../contexts/categories.context';
 const CartDropdown=()=>{
 
 const {cartItems}= useContext(CartContext);
+
 const navigate=useNavigate();
 const goToCheckoutHandler=()=>{
    navigate('/checkout') 
