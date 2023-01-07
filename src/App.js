@@ -1,5 +1,6 @@
-import {   useEffect } from "react";
+import {  useEffect } from "react";
 import { useDispatch } from "react-redux";
+
 
 import {
   onAuthStateChangedListener,
@@ -16,9 +17,14 @@ import Checkout from "./routes/checkout/checkout.component";
 import { setCurrentUser } from "./store/user/user.action.js";
 import { GlobalStyle } from "./global.styles";
 
+
+
+
 const App = () => {
   const dispatch = useDispatch();
 
+  
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
@@ -28,10 +34,11 @@ const App = () => {
     });
 
     return unsubscribe;
-  }, []);
+  }, );
   return (
     <>
       <GlobalStyle />
+
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
