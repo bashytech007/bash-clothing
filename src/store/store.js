@@ -8,13 +8,13 @@ import logger from'redux-logger'
 
 const persistConfig = {
   key: "root",
-  storage: storage,
+  storage:storage,
   blacklist: ["user"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const middleWares = [process.env.NODE_ENV !== "production" && logger].filter(
+const middleWares = [process.env.NODE_ENV === "development" && logger].filter(
   Boolean
 );
 const composeEnhancer =

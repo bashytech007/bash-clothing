@@ -1,7 +1,7 @@
 import {CartItemContainer,ItemDetails}from './cart-item.styles.jsx'
 
-const Cartitem=({cartitem})=>{
-    const {name,imageUrl,price,quantity}=cartitem;
+const Cartitem=({cartItem})=>{
+    const {name,imageUrl,price,quantity}=cartItem;
 return(
     <CartItemContainer>
         <img src={imageUrl} alt={`${name}`}/>
