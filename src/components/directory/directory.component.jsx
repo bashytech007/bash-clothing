@@ -42,8 +42,7 @@ import  {DirectoryContainer} from './directory.styles.jsx'
   //    route:'shop/accesories'
   //  },
  ];
-const Directory=({})=>{
-    
+const Directory=()=>{
     return(
         <DirectoryContainer>
             {categories.map((category)=>(

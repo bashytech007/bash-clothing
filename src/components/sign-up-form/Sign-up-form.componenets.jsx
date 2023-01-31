@@ -3,10 +3,7 @@ import { useDispatch } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/Button.component";
 
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/Firebase.utils";
+
 
 import { SignUpcontainer } from "./sign-up-form.styles.jsx";
 import { signUpStart } from "../../store/user/user.action";
