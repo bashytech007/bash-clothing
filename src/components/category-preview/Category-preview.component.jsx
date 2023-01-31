@@ -1,8 +1,7 @@
 import {Title,Preview,CategoryPreviewContainer} from  "./Category-preview.styles.jsx";
-
-
 import ProductCard from "../product-card/Product-card.component";
 // import { CategoriesContext } from '../../contexts/categories.context';
+
 
 const CategoryPreview = ({ title, products }) => {
   

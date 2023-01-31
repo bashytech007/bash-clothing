@@ -2,10 +2,6 @@ import {  useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-} from "./utils/firebase/Firebase.utils.js";
 
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/home.component";
@@ -14,7 +10,7 @@ import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import Shop from "./routes/shop/Shop.component";
 import Checkout from "./routes/checkout/checkout.component";
-import { setCurrentUser } from "./store/user/user.action.js";
+import { checkUserSession } from "./store/user/user.action.js";
 import { GlobalStyle } from "./global.styles";
 
 
@@ -26,15 +22,9 @@ const App = () => {
   
   
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
+    dispatch(checkUserSession());
+  },[] );
 
-    return unsubscribe;
-  }, );
   return (
     <>
       <GlobalStyle />
